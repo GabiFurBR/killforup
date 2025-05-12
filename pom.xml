@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.gabifur_br</groupId>
+  <artifactId>KillForUP</artifactId>
+  <version>1.4.1</version>
+  <packaging>jar</packaging>
+
+  <name>KillForUP - Plugin de Up</name>
+  <description>Plugin de Minecraft baseado em matar mobs para subir de nível. Compatível com Paper/Purpur 1.21+</description>
+
+  <developers>
+    <developer>
+      <id>gabifur_br</id>
+      <name>GabiFur_BR</name>
+      <email>gabrielgamer1234lk51000@gmail.com</email>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.purpurmc.purpur</groupId>
+      <artifactId>purpur-api</artifactId>
+      <version>1.21.3-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.SkriptLang</groupId>
+      <artifactId>Skript</artifactId>
+      <version>2.11.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.199</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>eu.fthevenet</groupId>
+      <artifactId>changelog-maker</artifactId>
+      <version>0.1</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>purpurmc-repo</id>
+      <url>https://repo.purpurmc.org/snapshots</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>21</source>
+          <target>21</target>
+        </configuration>
+      </plugin>
+
+      <!-- Plugin para limpar e empacotar tudo certo -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.3.1</version>
+      </plugin>
+
+      <!-- Plugin para shadejar (opcional, se quiser juntar dependências) -->
+      <!--<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <relocations>
+                <relocation>
+                  <pattern>com.example</pattern>
+                  <shadedPattern>com.gabifur_br.shaded.example</shadedPattern>
+                </relocation>
+              </relocations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>-->
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,7 @@
+# Configurações do Changelog
+changelog:
+  enabled: true        # Habilitar ou desabilitar o changelog
+  items_per_page: 5    # Itens exibidos por página
+  max_pages: 30        # Máximo de páginas
+
+#some_other_setting: "valor"
